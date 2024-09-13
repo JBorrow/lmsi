@@ -8,12 +8,18 @@ exclude = ["templates"]
 [project]
 name = "lmsi"
 version = "0.0.1a1"
-requires-python = ">=3.11"
+requires-python = ">=3.9"
 dependencies = [
     "jinja2",
     "unyt",
     "pydantic"
 ]
+authors = [
+  { name="Josh Borrow", email="josh@joshborrow.com" },
+]
+readme = "README.md"
+description = "A command-line utility for placing figures in a static webpage"
+
 
 [project.scripts]
 lmsi = "lmsi.cli:main"
