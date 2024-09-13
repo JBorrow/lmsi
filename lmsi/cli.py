@@ -21,6 +21,7 @@ parser.add_argument(
     "--config",
     type=Path,
     help="The configuration file to use.",
+    default=None,
 )
 
 parser.add_argument(

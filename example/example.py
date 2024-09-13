@@ -24,5 +24,5 @@ print(
     "You need to run:"
 )
 print(
-    "lmsi --files=*.png --output=index.html --config=example.json"
+    "lmsi --files *.png --output index.html --config example.json"
 )

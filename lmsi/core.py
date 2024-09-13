@@ -13,10 +13,12 @@ def core(
     config_location: Path,
     output: Path,
 ):
-    config = Config.from_file(config_location)
+    if config_location is not None:
+        config = Config.from_file(config_location)
+    else:
+        config = Config(sections=[])
+    
     plot_container = PlotContainer.from_config(config, {x.name for x in potential_plots})
-
-    print(plot_container)
 
     webpage_creator = WebpageCreator()
     webpage_creator.add_metadata("LMSI Webpage")
