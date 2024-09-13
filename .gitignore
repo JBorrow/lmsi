@@ -1,0 +1,6 @@
+env/*
+example/*.png
+
+*.egg-info
+*.swp
+*.pyc
