@@ -3,7 +3,13 @@ Let Me Scroll It (lmsi)
 
 `lmsi` is a command-line utility that produces a html web-page.
 This web-page contains the images you provide the command-line
-utility.
+utility. It is available on PyPI:
+
+```
+pip install let-me-scroll-it
+```
+
+(`lmsi` was not allowed by PyPI, unfortunately...)
 
 You can configure sections, titles for plots, and captions,
 using the JSON configuration file of the form:
