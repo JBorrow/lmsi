@@ -2,6 +2,7 @@
 Functions that aid in the production of the HTML webpages.
 """
 
+from importlib.metadata import version
 from time import strftime
 
 import unyt
@@ -17,13 +18,13 @@ def format_number(number):
 
     try:
         units = f"\\; {number.units.latex_repr}"
-    except:
+    except AttributeError:
         units = ""
 
     try:
         mantissa, exponent = ("%.3g" % number).split("e+")
         exponent = f" \\times 10^{{{int(exponent)}}}"
-    except:
+    except ValueError:
         mantissa = "%.3g" % number
         exponent = ""
 
@@ -103,6 +104,7 @@ class WebpageCreator(object):
         # this package and the velociraptor package used.
         self.variables = dict(
             creation_date=strftime(r"%Y-%m-%d"),
+            pipeline_version=version("lmsi"),
             sections={},
             runs=[],
         )
@@ -151,7 +153,7 @@ class WebpageCreator(object):
         """
 
         self.plot_container = plot_container
-        self.variables = self.plot_container.model_dump()
+        self.variables = {**self.variables, **self.plot_container.model_dump()}
 
         return
 

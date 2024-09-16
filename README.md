@@ -12,12 +12,12 @@ using the JSON configuration file of the form:
 {
   "Section Name": {
     "[0-9]*_.*png": {
-      "caption": "A figure selected using regex.",
+      "caption": "A figure selected using regex. I can use MathJax $x^2 = 3$.",
       "title": "Regex Selection",
       "regex": true
     },
     "no_regex_required.png": {
-      "caption": "No regex requried for this, just searched on the filename",
+      "caption": "No regex requried for this, just searched on the filename.",
       "title": "Fixed Name Selection"
     }
   }

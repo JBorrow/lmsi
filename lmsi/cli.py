@@ -2,13 +2,12 @@
 Simple entrypoint
 """
 
-from lmsi.core import core
 import argparse as ap
 from pathlib import Path
 
-parser = ap.ArgumentParser(
-    description="Create a webpage from a set of plots."
-)
+from lmsi.core import core
+
+parser = ap.ArgumentParser(description="Create a webpage from a set of plots.")
 
 parser.add_argument(
     "--files",
@@ -38,6 +37,7 @@ parser.add_argument(
 )
 
 args = parser.parse_args()
+
 
 def main():
     if args.debug:

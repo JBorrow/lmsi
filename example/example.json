@@ -1,7 +1,7 @@
 {
   "With Captions": {
     "[0-9]*_.*png": {
-      "caption": "A figure selected using regex.",
+      "caption": "A figure selected using regex. I can use MathJax $x^2 = 3$.",
       "title": "Regex Selection",
       "regex": true
     },

@@ -6,8 +6,8 @@ build-backend = "setuptools.build_meta"
 exclude = ["templates"]
 
 [project]
-name = "lmsi"
-version = "0.0.1a1"
+name = "let-me-scroll-it"
+version = "0.0.2"
 requires-python = ">=3.9"
 dependencies = [
     "jinja2",

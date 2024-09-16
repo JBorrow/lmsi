@@ -1,11 +1,12 @@
 """
-Core functions for the LMSI package, taking in 
+Core functions for the LMSI package, taking in
 raw paths and saving out the HTML file.
 """
 
+from pathlib import Path
+
 from lmsi.container import Config, PlotContainer
 from lmsi.webpage.html import WebpageCreator
-from pathlib import Path
 
 
 def core(
@@ -17,8 +18,10 @@ def core(
         config = Config.from_file(config_location)
     else:
         config = Config(sections=[])
-    
-    plot_container = PlotContainer.from_config(config, {x.name for x in potential_plots})
+
+    plot_container = PlotContainer.from_config(
+        config, {x.name for x in potential_plots}
+    )
 
     webpage_creator = WebpageCreator()
     webpage_creator.add_metadata("LMSI Webpage")

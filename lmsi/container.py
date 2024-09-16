@@ -2,9 +2,10 @@
 The plot container!
 """
 
-from pydantic import BaseModel
 import json
 import re
+
+from pydantic import BaseModel
 
 
 class PlotConfig(BaseModel):
@@ -83,7 +84,7 @@ class PlotContainer(BaseModel):
                             )
                         )
                         matched_files.add(filename)
-            
+
             if len(section_plots) > 0:
                 sections.append(Section(name=section_config.name, plots=section_plots))
 
