@@ -2,7 +2,7 @@
 Functions that aid in the production of the HTML webpages.
 """
 
-from importlib.metadata import version
+from importlib.metadata import PackageNotFoundError, version
 from time import strftime
 
 import unyt
@@ -102,9 +102,15 @@ class WebpageCreator(object):
 
         # Initialise empty variables dictionary, with the versions of
         # this package and the velociraptor package used.
+        try:
+            software_version = version("let-me-scroll-it")
+        except PackageNotFoundError:
+            # Minor packaging problem who cares...
+            software_version = "unknown"
+
         self.variables = dict(
             creation_date=strftime(r"%Y-%m-%d"),
-            pipeline_version=version("lmsi"),
+            pipeline_version=software_version,
             sections={},
             runs=[],
         )
