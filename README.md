@@ -44,3 +44,14 @@ lmsi --files *.png --output index.html --config /path/to/config.json
 
 Using `lmsi` without a config leads to all figures being
 placed in the 'uncategorised' section.
+
+Licensing
+---------
+
+`lmsi` contains a bundled copy of the [MathJax](https://github.com/mathjax/MathJax)
+library, which is licensed with the Apache 2.0 library.
+
+`lmsi` contains a bundled copy of the [polyfill.js](https://philipwalton.github.io/polyfill/)
+library, which is licensed with the MIT license.
+
+The rest of the source code, produced by the `lmsi` authors, is MIT-licensed.
