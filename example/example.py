@@ -17,7 +17,8 @@ def make_figure(title: str, filename: str):
     plt.close(fig)
 
 
-make_figure("Find me with regex", "12341_plot.png")
+for x in range(6):
+    make_figure("Find me with regex", f"{12341 + x}_plot.png")
 make_figure("Find me based on a filename", "no_regex_required.png")
 make_figure("Find me without a caption", "no_caption.png")
 

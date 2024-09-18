@@ -111,7 +111,7 @@ class WebpageCreator(object):
         self.variables = dict(
             creation_date=strftime(r"%Y-%m-%d"),
             pipeline_version=software_version,
-            sections={},
+            sections=[],
             runs=[],
         )
 
@@ -159,6 +159,7 @@ class WebpageCreator(object):
         """
 
         self.plot_container = plot_container
+        print(plot_container)
         self.variables = {**self.variables, **self.plot_container.model_dump()}
 
         return
